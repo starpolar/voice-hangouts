@@ -1,0 +1,63 @@
+{
+  "name": "voice-hangouts",
+  "version": "0.0.1",
+  "description": "Voice hangouts with your friends",
+  "license": "MIT",
+  "main": "server/index.js",
+  "engines": {
+    "node": "^9.3.0",
+    "npm": "^5.6.0"
+  },
+  "scripts": {
+    "build": "npm run clean && NODE_ENV=production $(npm bin)/webpack --progress --colors --config ./webpack.config.js",
+    "clean": "find ./public -not -path '*/\\.*' -type f -maxdepth 1 -delete",
+    "lint": "$(npm bin)/eslint --fix '+(client|server)/**/*.+(js|jsx)' './*.js'",
+    "start": "nodemon server/index.js",
+    "serve": "node server/index.js",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.7",
+    "font-awesome": "^4.7.0",
+    "koa": "^2.4.1",
+    "koa-router": "^7.3.0",
+    "koa-send": "^4.1.1",
+    "koa-websocket": "^5.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
+    "react-redux": "^5.1.1",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "uuid": "^3.1.0",
+    "volume-meter": "^2.0.1",
+    "webrtc-adapter": "^6.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.13.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "koa-convert": "^1.2.0",
+    "koa-webpack-middleware": "^1.0.7",
+    "nodemon": "^1.18.9",
+    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
+    "webpack": "^3.10.0",
+    "webpack-cdn-plugin": "^1.7.1"
+  }
+}

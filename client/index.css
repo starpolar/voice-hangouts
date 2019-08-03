@@ -1,0 +1,17 @@
+body,
+input {
+  font: inherit;
+}
+
+p {
+  color: #4d5659;
+}
+
+* {
+  font-family: Arial;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
