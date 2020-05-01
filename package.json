@@ -14,7 +14,9 @@
     "lint": "$(npm bin)/eslint --fix '+(client|server)/**/*.+(js|jsx)' './*.js'",
     "start": "nodemon server/index.js",
     "serve": "node server/index.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
@@ -34,7 +36,8 @@
     "url-loader": "^0.6.2",
     "uuid": "^3.1.0",
     "volume-meter": "^2.0.1",
-    "webrtc-adapter": "^6.0.3"
+    "webrtc-adapter": "^6.0.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -59,5 +62,6 @@
     "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
     "webpack": "^3.10.0",
     "webpack-cdn-plugin": "^1.7.1"
-  }
+  },
+  "snyk": true
 }
